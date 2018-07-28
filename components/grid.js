@@ -56,6 +56,7 @@ Grid.prototype = {
         this.grid.forEach(function( row ) {
             self.rows.push(row);
         });
+        this.grid.reverse();
     }
 };
 export {Grid};
