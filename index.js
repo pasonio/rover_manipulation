@@ -8,11 +8,15 @@ import {MagickClass} from "./components/magick.js";
 
 // send_coords.addEventListener('click', new MagickClass(coords));
 
-grid = new Grid(magick.getGridSize());
+magick.getGridSize()
 
-rovers = new Rovers(magick.getRovers());
+// grid = new Grid(magick.getGridSize());
 
-rovers.placeRovers(grid);
+magick.getRovers()
+
+// rovers = new Rovers(magick.getRovers());
+
+// rovers.placeRovers(grid);
 
 
 // function sendCoords(){
