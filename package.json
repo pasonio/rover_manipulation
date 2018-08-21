@@ -1,0 +1,25 @@
+{
+  "name": "rover_manipulaions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pasonio/rover_manipulation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pasonio/rover_manipulation/issues"
+  },
+  "homepage": "https://github.com/pasonio/rover_manipulation#readme",
+  "dependencies": {
+    "mocha": "^5.2.0"
+  }
+}
