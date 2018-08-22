@@ -1,11 +1,5 @@
 function MagickClass(){
     this.coordinates = ['5 5', '1 2 N', 'LMLMLMLMM', '3 3 E', 'MMRMMRMRRM'];
-    // this.directions = [
-    //     {name: 'N', value: 0},
-    //     {name: 'W', value: 90},
-    //     {name: 'S', value: 180},
-    //     {name: 'E', value: 270},
-    // ];
     this.rovers = [];
 }
 
@@ -35,8 +29,4 @@ MagickClass.prototype = {
         return this.rovers;
     }
 };
-// let magick = new MagickClass();
-// console.log('Grid sizes: '+JSON.stringify(magick.getGridSize()));
-// console.log('Rovers: '+JSON.stringify(magick.getRovers()));
-// console.log('Rovers position: '+JSON.stringify(magick.getPosition()));
 module.exports =  {MagickClass};
