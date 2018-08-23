@@ -1,10 +1,10 @@
-function MagickClass(){
-    this.coordinates = ['5 5', '1 2 N', 'LMLMLMLMM', '3 3 E', 'MMRMMRMRRM'];
-    this.rovers = [];
-}
+class MagickClass {
+    constructor(coordinates) {
+        this.coordinates = coordinates;
+        this.rovers = [];
+    }
 
-MagickClass.prototype = {
-    getGridSize: function(){
+    getGridSize() {
         let size = this.coordinates[0].split(' ');
         return {
             rows: size[0],
@@ -13,20 +13,28 @@ MagickClass.prototype = {
                 {
                     placeholder: '#some_grid_container'
                 }
-        };
-    },
-    getRovers: function() {
-        let dataArr = this.coordinates.splice(1);
+        }
+    }
+
+    getStart(dataArr, i) {
+        return dataArr.slice(i, i+1).toString().split(' ')
+    }
+
+    getMove(dataArr, i) {
+        return dataArr.slice(i+1, i+2).toString().split('')
+    }
+
+    getRovers() {
+        let positionToSplit = 1;
+        let dataArr = this.coordinates.splice(positionToSplit);
         for(let i = 0; i<dataArr.length; i+=2){
-            let start = dataArr.slice(i, i+1).toString();
-            let move = dataArr.slice(i+1, i+2).toString();
             this.rovers.push({
-                start: start.split(' '),
-                move: move.split('')
+                start: this.getStart(dataArr, i),
+                move: this.getMove(dataArr, i)
             });
         }
-
         return this.rovers;
     }
-};
+}
+
 module.exports =  {MagickClass};
