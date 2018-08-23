@@ -6,14 +6,17 @@ class MagickClass {
 
     getGridSize() {
         let size = this.getGridColumns();
-
-        return {
-            rows: size[0],
-            cols: size[1],
-            render:
-                {
-                    placeholder: '#some_grid_container'
-                }
+        if(size.length >= 2 ) {
+            return {
+                rows: size[0],
+                cols: size[1],
+                render:
+                    {
+                        placeholder: '#some_grid_container'
+                    }
+            }
+        } else {
+            return [];
         }
     }
 
