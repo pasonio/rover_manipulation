@@ -3,7 +3,7 @@ let magick = require('../components/magick.js');
 
 describe('MagickClass -> getRovers', function(){
     it('should give an output of the rovers', function(){
-        const magickClass = new magick.MagickClass(['5 5', '1 2 N', 'LMLMLMLMM', '3 3 E', 'MMRMMRMRRM'])
+        const magickClass = new magick.MagickClass(['5 5', '1 2 N', 'LMLMLMLMM', '3 3 E', 'MMRMMRMRRM']);
 
         assert.deepEqual(
             magickClass.getRovers(),
@@ -22,8 +22,8 @@ describe('MagickClass -> getRovers', function(){
 });
 
 describe('MagickClass -> getRovers', function(){
-    it('should give an output of the rovers', function(){
-        const magickClass = new magick.MagickClass(['5 5'])
+    it('should give empty array', function(){
+        const magickClass = new magick.MagickClass(['5 5']);
 
         assert.deepEqual(
             magickClass.getRovers(),
@@ -32,10 +32,9 @@ describe('MagickClass -> getRovers', function(){
     });
 });
 
-
 describe('MagickClass -> getRovers', function(){
     it('should give an output of the rovers', function(){
-        const magickClass = new magick.MagickClass(['5 5', '1 2 N', 'MM'])
+        const magickClass = new magick.MagickClass(['5 5', '1 2 N', 'MM']);
 
         assert.deepEqual(
             magickClass.getRovers(),
@@ -51,7 +50,7 @@ describe('MagickClass -> getRovers', function(){
 
 describe('MagickClass -> getGridSize', function() {
     it('should return the grid size and something', function() {
-        const magickClass = new magick.MagickClass(['5 5', '1 2 N', 'LMLMLMLMM', '3 3 E', 'MMRMMRMRRM']);
+        const magickClass = new magick.MagickClass(['5 5']);
 
         assert.deepEqual(
             magickClass.getGridSize(),
@@ -64,4 +63,17 @@ describe('MagickClass -> getGridSize', function() {
             }
         )
     })
+});
+
+describe('MagickClass -> getGridSize', function(){
+   it('should return error', function(){
+       const magickClass = new magick.MagickClass(['55']);
+       assert.throws(() => {
+           let size = magickClass.getGridColumns();
+           console.log(size.length);
+           if(size.length <= 1){
+               throw new SyntaxError('Parse Error')
+           }
+       }, SyntaxError);
+   })
 });

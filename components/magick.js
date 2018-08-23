@@ -5,7 +5,8 @@ class MagickClass {
     }
 
     getGridSize() {
-        let size = this.coordinates[0].split(' ');
+        let size = this.getGridColumns();
+
         return {
             rows: size[0],
             cols: size[1],
@@ -14,6 +15,11 @@ class MagickClass {
                     placeholder: '#some_grid_container'
                 }
         }
+    }
+
+    getGridColumns(){
+        return this.coordinates[0].split(' ');
+
     }
 
     getStart(dataArr, i) {
