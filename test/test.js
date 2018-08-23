@@ -65,12 +65,24 @@ describe('MagickClass -> getGridSize', function() {
     })
 });
 
-describe('MagickClass -> getGridSize', function(){
+describe('MagickClass -> getStart', function(){
+   it('should return error', function(){
+       const magickClass = new magick.MagickClass();
+       assert.throws(() => {
+           let coords = magickClass.getStart(['12'], 0);
+           console.log(coords.length);
+           if(coords.length <= 1){
+               throw new SyntaxError('Parse Error');
+           }
+       }, SyntaxError);
+   })
+});
+
+describe('MagickClass -> getGridColumn', function(){
    it('should return error', function(){
        const magickClass = new magick.MagickClass(['55']);
        assert.throws(() => {
            let size = magickClass.getGridColumns();
-           console.log(size.length);
            if(size.length <= 1){
                throw new SyntaxError('Parse Error')
            }

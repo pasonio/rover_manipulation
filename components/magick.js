@@ -26,11 +26,11 @@ class MagickClass {
     }
 
     getStart(dataArr, i) {
-        return dataArr.slice(i, i+1).toString().split(' ')
+        return dataArr.slice(i, i+1).toString().split(' ');
     }
 
     getMove(dataArr, i) {
-        return dataArr.slice(i+1, i+2).toString().split('')
+        return dataArr.slice(i+1, i+2).toString().split('');
     }
 
     getRovers() {
